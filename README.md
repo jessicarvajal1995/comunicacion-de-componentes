@@ -1,4 +1,5 @@
-#Ejercicio de comunicación entre componentes en Angular 11
+# Ejercicio de comunicación entre componentes en Angular 11 :star: :collision:
 
-DEPLOY: https://https://comunicacion-entre-componentes-jessika.netlify.app/
+###### deploy: 
+https://comunicacion-entre-componentes-jessika.netlify.app/
 
