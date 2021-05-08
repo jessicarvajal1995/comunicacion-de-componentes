@@ -1,0 +1,33 @@
+<div class="container mt-3">
+    <!-- [todos]="obtenerTotalEmpleados() - informacion del padre al hijoa través del property-binding -->
+    <app-count-empleados [todos]="obtenerTotalEmpleados()" [femenino]="obtenerTotalFemenino()" [masculino]="obtenerTotalMasculino()" (countRadioButtonChange)="empleadoCountRadioButtonChange($event)">
+        <!--  (countRadioButtonChange)="empleadoCountRadioButtonChange($event) - informacion del hijo al padre través del event-binding -->
+    </app-count-empleados>
+    <div class="card mt-3">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Legajo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Sexo</th>
+                        <th>Salario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let empleado of listEmpleados">
+                        <tr *ngIf="radioButtonSeleccionado == 'Todos' || radioButtonSeleccionado == empleado.sexo ">
+                            <td>{{ empleado.legajo }}</td>
+                            <td>{{ empleado.nombre }}</td>
+                            <td>{{ empleado.apellido }}</td>
+                            <td>{{ empleado.sexo }}</td>
+                            <td>{{ empleado.salario | currency }}</td>
+                            <!-- | currency para ver simbolo de moneda -->
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
